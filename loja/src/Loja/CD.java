@@ -4,7 +4,7 @@ public class CD extends Produto {
     private String autor, gravadora;
     int trilhas, ano;
 
-    CD(int code, String titulo, String autor, int trilhas, String gravadora, int ano) {
+    CD(long code, String titulo, String autor, int trilhas, String gravadora, int ano) {
         super(code, titulo);
 
         this.autor = autor;
@@ -43,5 +43,19 @@ public class CD extends Produto {
 
     public void setAno(int aux) {
         this.ano = aux;
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+
+        s += "CD\nCódigo: " + this.getCodigo() +
+                "\nTítulo: " + this.getNome() +
+                "\nBanda: " + this.autor +
+                "\nGravadora: " + this.gravadora +
+                "\nAno: " + this.ano +
+                "\ntrilhas: " + this.trilhas;
+
+        return s;
     }
 }

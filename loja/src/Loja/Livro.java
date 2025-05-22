@@ -4,7 +4,7 @@ public class Livro extends Produto {
     private String autor, editora, idioma;
     private int ano, edicao, paginas;
 
-    Livro(int code, String nome, String autor, String editora, int Ano, int edicao, int paginas, String idioma) {
+    Livro(long code, String nome, String autor, String editora, int Ano, int edicao, int paginas, String idioma) {
         super(code, nome);
 
         this.autor = autor;
@@ -61,5 +61,21 @@ public class Livro extends Produto {
 
     public void setPaginas(int aux) {
         this.paginas = aux;
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+
+        s += "Livro\nCódigo: " + this.getCodigo() +
+                "\nTítulo: " + this.getNome() +
+                "\nAutor: " + this.autor +
+                "\nEditora: " + this.editora +
+                "\nEdição: " + this.edicao +
+                "\nAno: " + this.ano +
+                "\nPáginas: " + this.paginas +
+                "\nIdioma: " + this.idioma;
+
+        return s;
     }
 }

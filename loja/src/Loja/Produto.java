@@ -1,20 +1,21 @@
 package Loja;
 
-public class Produto {
-    private int codigo, estoque;
+public abstract class Produto {
+    private int estoque;
     private String nome;
+    private long codigo;
 
-    Produto(int code, String nome) {
+    Produto(long code, String nome) {
         this.codigo = code;
         this.nome = nome;
-        this.estoque = 1;
+        this.estoque = 0;
     }
 
-    protected int getCodigo() {
+    protected long getCodigo() {
         return this.codigo;
     }
 
-    protected void setCodigo(int aux) {
+    protected void setCodigo(long aux) {
         this.codigo = aux;
     }
 
@@ -26,12 +27,18 @@ public class Produto {
         this.nome = aux;
     }
 
-    public void setEstoque(int aux) {
-        this.estoque = aux;
+    public boolean setEstoque(int aux) {
+        if (this.estoque + aux < 0) {
+            return false;
+        } else
+            this.estoque += aux;
+        return true;
     }
 
     public int getEstoque() {
         return this.estoque;
     }
+
+    public abstract String toString();
 
 }

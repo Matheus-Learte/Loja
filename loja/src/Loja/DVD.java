@@ -4,7 +4,7 @@ public class DVD extends Produto {
     private String diretor, idioma, genero, nacionalidade;
     private int ano;
 
-    DVD(int code, String nome, String diretor, String idioma, String genero, int ano, String country) {
+    DVD(long code, String nome, String diretor, String idioma, String genero, int ano, String country) {
         super(code, nome);
 
         this.diretor = diretor;
@@ -32,5 +32,20 @@ public class DVD extends Produto {
 
     public int getAno() {
         return this.ano;
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+
+        s += "DVD\nCódigo: " + this.getCodigo() +
+                "\nTítulo: " + this.getNome() +
+                "\nDiretor: " + this.diretor +
+                "\nGênero: " + this.genero +
+                "\nAno: " + this.ano +
+                "\nNacionalidade: " + this.nacionalidade +
+                "\nIdioma: " + this.idioma;
+
+        return s;
     }
 }
